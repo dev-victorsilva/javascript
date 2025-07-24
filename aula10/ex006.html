@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#container {
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        Interaja...
+
+    </div>
+
+
+    <script>
+        container.addEventListener('click', clicar)
+        container.addEventListener('mouseenter', colorchange)
+        container.addEventListener('mouseout', reset)
+
+        function clicar() {
+            var container = window.document.getElementById('container')
+            container.innerText = 'Clicou!'
+            container.style.background = 'red'
+        }
+
+        function colorchange() {
+            var container = window.document.getElementById('container')
+            container.innerText ='Entrou!'
+            container.style.background = 'black'
+        }
+
+        function reset() {
+            var container = window.document.getElementById('container')
+            container.innerText = 'Interaja...'
+            container.style.background = 'green'
+        }
+    </script>
+    
+</body>
+</html>
