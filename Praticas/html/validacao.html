@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de Formulário</title>
+</head>
+<body>
+
+  <form id="meuForm">
+    <input type="text" id="texto" name="texto">
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <p id="validacao"></p>
+
+  <script>
+    const form = document.getElementById('meuForm')
+    const input = document.getElementById('texto')
+    const mensagem = document.getElementById('validacao')
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault() 
+
+      if (input.value.trim() === "") {
+        mensagem.innerText = "Preencha o Campo!"
+      } else {
+        mensagem.innerText = "Enviado com Sucesso."
+      }
+    })
+  </script>
+
+</body>
+</html>
